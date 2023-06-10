@@ -18,6 +18,18 @@
   }
 }
 
+a {
+  display: inline-block;
+  width: 160px;
+  height: 32px;
+  border: 1px solid black;
+  border-radius: 8px;
+  text-align: center;
+  line-height: 32px;
+  text-decoration: none;
+  color: inherit;
+}
+
 /* スマホ向けレイアウト */
 @media all and (max-width: 670px) {
   .lesson {
