@@ -43,12 +43,33 @@ article {
 }
 
 article img {
-  transition-property: transform;
-  transition-duration: 1s;
+  transition: transform 1s, border-radius 1s;
+  animation: move-around 4s infinite 1s alternate;
+}
+
+@keyframes move-around {
+  25% {
+    transform: translate(100px, 0);
+    border-radius: 0;
+  }
+  50% {
+    transform: translate(100px, 100px);
+    border-radius: 50%;
+  }
+  75% {
+    transform: translate(0, 100px);
+    border-radius: 0;
+  }
+  100% {
+    transform: translate(0, 200px);
+    border-radius: 0;
+  }
+
 }
 
 article img:hover {
   transform: scale(.5) rotate(45deg) translate(40px,-40px);
+  border-radius: 50%;
 }
 
 article + article {
@@ -123,4 +144,24 @@ h1 {
     width: calc((100% - 16px) / 3);
   }
   
+}
+
+/* spin */
+
+.loading {
+  width: 32px;
+  height: 32px;
+  border-top: 8px solid red;
+  border-right: 8px solid blue;
+  border-bottom: 8px solid green;
+  border-left: 8px solid yellow;
+  border-radius: 50%;
+  animation: spin 1000ms infinite linear;
+  /* animation-timing-function: linear; */
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
 }
